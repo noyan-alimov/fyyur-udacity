@@ -1,6 +1,13 @@
-import datetime
+from app import Artist
 
+artists = Artist.query.all()
 
-def find_current_date():
-    now = datetime.datetime.now()
-    return now.strftime("%Y-%m-%d %H:%M:%S")
+data = []
+for artist in artists:
+    obj = {
+        'id': artist.id,
+        'name': artist.name
+    }
+    data.append(obj)
+
+print(data)

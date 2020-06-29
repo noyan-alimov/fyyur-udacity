@@ -685,3 +685,799 @@ Traceback (most recent call last):
   File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
     raise TypeError('Parser must be a string or character stream, not '
 TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:09:33,496 INFO: errors [in app.py:600]
+2020-06-29 19:09:37,427 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 244, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "app.py", line 94, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
+    raise TypeError('Parser must be a string or character stream, not '
+TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:20:25,239 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 244, in show_venue
+    venue = list(filter(lambda d: d['id'] ==
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "app.py", line 94, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
+    raise TypeError('Parser must be a string or character stream, not '
+TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:20:37,321 INFO: errors [in app.py:602]
+2020-06-29 19:20:41,423 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 190, in show_venue
+    Show.start_time.strftime("%m/%d/%Y, %H:%M") < datetime.now()).all()
+AttributeError: type object 'Show' has no attribute 'start_time'
+2020-06-29 19:21:26,719 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 190, in show_venue
+    shows.start_time.strftime("%m/%d/%Y, %H:%M") < datetime.now()).all()
+AttributeError: type object 'Show' has no attribute 'start_time'
+2020-06-29 19:21:38,422 INFO: errors [in app.py:602]
+2020-06-29 19:21:41,494 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 189, in show_venue
+    past_shows = db.session.query(shows).join(Artist).filter(shows.venue_id == venue_id).filter(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\sqlalchemy\orm\scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\sqlalchemy\orm\session.py", line 1584, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\sqlalchemy\orm\query.py", line 199, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\sqlalchemy\orm\query.py", line 225, in _set_entities
+    entity_wrapper(self, ent)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\sqlalchemy\orm\query.py", line 4666, in __init__
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: SQL expression, column, or mapped entity expected - got '[<Show 1>]'
+2020-06-29 19:22:45,705 INFO: errors [in app.py:600]
+2020-06-29 19:22:49,597 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 244, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "app.py", line 94, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
+    raise TypeError('Parser must be a string or character stream, not '
+TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:23:18,215 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 244, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "app.py", line 94, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
+    raise TypeError('Parser must be a string or character stream, not '
+TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:23:26,865 INFO: errors [in app.py:600]
+2020-06-29 19:23:29,098 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 195, in show_venue
+    if show_date > current_date:
+TypeError: '>' not supported between instances of 'str' and 'datetime.datetime'
+2020-06-29 19:23:57,006 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 195, in show_venue
+    if show_date > current_date:
+TypeError: '>' not supported between instances of 'str' and 'datetime.datetime'
+2020-06-29 19:24:09,935 INFO: errors [in app.py:600]
+2020-06-29 19:24:12,955 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 244, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "app.py", line 94, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
+    raise TypeError('Parser must be a string or character stream, not '
+TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:25:11,747 INFO: errors [in app.py:600]
+2020-06-29 19:25:14,378 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 195, in show_venue
+    if show_date > current_date:
+TypeError: '>' not supported between instances of 'str' and 'datetime.datetime'
+2020-06-29 19:25:56,961 INFO: errors [in app.py:600]
+2020-06-29 19:26:01,423 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 195, in show_venue
+    if show_date > current_date:
+TypeError: '>' not supported between instances of 'str' and 'datetime.datetime'
+2020-06-29 19:26:36,656 INFO: errors [in app.py:600]
+2020-06-29 19:26:41,049 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 244, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "app.py", line 94, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
+    raise TypeError('Parser must be a string or character stream, not '
+TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:27:39,039 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 244, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "app.py", line 94, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
+    raise TypeError('Parser must be a string or character stream, not '
+TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:28:24,352 INFO: errors [in app.py:600]
+2020-06-29 19:28:29,017 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 244, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "app.py", line 94, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
+    raise TypeError('Parser must be a string or character stream, not '
+TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:31:08,886 INFO: errors [in app.py:601]
+2020-06-29 19:31:16,535 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 245, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "app.py", line 95, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
+    raise TypeError('Parser must be a string or character stream, not '
+TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:34:03,419 INFO: errors [in app.py:601]
+2020-06-29 19:34:08,131 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 196, in show_venue
+    if show_date > current_date:
+TypeError: '>' not supported between instances of 'str' and 'datetime.datetime'
+2020-06-29 19:34:40,850 INFO: errors [in app.py:601]
+2020-06-29 19:34:44,917 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 245, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "app.py", line 95, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\dateutil\parser.py", line 60, in __init__
+    raise TypeError('Parser must be a string or character stream, not '
+TypeError: Parser must be a string or character stream, not datetime
+2020-06-29 19:36:43,229 INFO: errors [in app.py:601]
+2020-06-29 19:36:47,993 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 245, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 66, in block "content"
+    {%for show in venue.past_shows %}
+TypeError: 'NoneType' object is not iterable
+2020-06-29 19:45:00,945 INFO: errors [in app.py:601]
+2020-06-29 19:45:06,356 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 245, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 66, in block "content"
+    {%for show in venue.past_shows %}
+TypeError: 'NoneType' object is not iterable
+2020-06-29 19:47:54,930 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:601]
+2020-06-29 19:49:05,746 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:601]
+2020-06-29 19:54:29,728 INFO: errors [in app.py:601]
+2020-06-29 19:54:34,099 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 245, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 66, in block "content"
+    {%for show in venue.past_shows %}
+TypeError: 'NoneType' object is not iterable
+2020-06-29 19:59:20,936 INFO: errors [in app.py:609]
+2020-06-29 20:00:48,709 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:609]
+2020-06-29 20:06:28,356 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:610]
+2020-06-29 20:07:03,130 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:610]
+2020-06-29 20:08:24,859 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:610]
+2020-06-29 20:09:18,284 INFO: errors [in app.py:617]
+2020-06-29 20:16:05,930 INFO: errors [in app.py:612]
+2020-06-29 20:23:46,185 INFO: errors [in app.py:613]
+2020-06-29 20:23:53,936 ERROR: Exception on /venues/7 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 226, in show_venue
+    upcoming_shows_data = find_upcoming_shows()
+  File "app.py", line 221, in find_upcoming_shows
+    'artist_name': upcoming_show_artist.name,
+AttributeError: 'BaseQuery' object has no attribute 'name'
+2020-06-29 20:23:59,869 ERROR: Exception on /venues/6 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 226, in show_venue
+    upcoming_shows_data = find_upcoming_shows()
+  File "app.py", line 221, in find_upcoming_shows
+    'artist_name': upcoming_show_artist.name,
+AttributeError: 'BaseQuery' object has no attribute 'name'
+2020-06-29 20:51:28,600 INFO: errors [in app.py:612]
+2020-06-29 20:52:50,038 INFO: errors [in app.py:611]
+2020-06-29 20:52:56,326 ERROR: Exception on /venues/7 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 252, in show_venue
+    return render_template('pages/show_venue.html', venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\pages\show_venue.html", line 66, in block "content"
+    {%for show in venue.past_shows %}
+TypeError: 'NoneType' object is not iterable
+2020-06-29 20:54:27,225 INFO: errors [in app.py:614]
+2020-06-29 20:56:15,847 INFO: errors [in app.py:617]
