@@ -191,3 +191,70 @@
 #         "artist_image_link": "https://images.unsplash.com/photo-1558369981-f9ca78462e61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
 #         "start_time": "2035-04-15T20:00:00.000Z"
 #     }]
+
+
+# VENUES
+# data = [{
+#     "city": "San Francisco",
+#     "state": "CA",
+#     "venues": [{
+#         "id": 1,
+#         "name": "The Musical Hop",
+#         "num_upcoming_shows": 0,
+#     }, {
+#         "id": 3,
+#         "name": "Park Square Live Music & Coffee",
+#         "num_upcoming_shows": 1,
+#     }]
+# }, {
+#     "city": "New York",
+#     "state": "NY",
+#     "venues": [{
+#         "id": 2,
+#         "name": "The Dueling Pianos Bar",
+#         "num_upcoming_shows": 0,
+#     }]
+# }]
+
+# ARTISTS
+# data = [{
+#     "id": 4,
+#     "name": "Guns N Petals",
+# }, {
+#     "id": 5,
+#     "name": "Matt Quevedo",
+# }, {
+#     "id": 6,
+#     "name": "The Wild Sax Band",
+# }]
+
+# EDIT ARTIST
+# artist = {
+#     "id": 4,
+#     "name": "Guns N Petals",
+#     "genres": ["Rock n Roll"],
+#     "city": "San Francisco",
+#     "state": "CA",
+#     "phone": "326-123-5000",
+#     "website": "https://www.gunsnpetalsband.com",
+#     "facebook_link": "https://www.facebook.com/GunsNPetals",
+#     "seeking_venue": True,
+#     "seeking_description": "Looking for shows to perform at in the San Francisco Bay Area!",
+#     "image_link": "https://images.unsplash.com/photo-1549213783-8284d0336c4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+# }
+
+# EDIT VENUE
+# venue = {
+#         "id": 1,
+#         "name": "The Musical Hop",
+#         "genres": ["Jazz", "Reggae", "Swing", "Classical", "Folk"],
+#         "address": "1015 Folsom Street",
+#         "city": "San Francisco",
+#         "state": "CA",
+#         "phone": "123-123-1234",
+#         "website": "https://www.themusicalhop.com",
+#         "facebook_link": "https://www.facebook.com/TheMusicalHop",
+#         "seeking_talent": True,
+#         "seeking_description": "We are on the lookout for a local artist to play every two weeks. Please call us.",
+#         "image_link": "https://images.unsplash.com/photo-1543900694-133f37abaaa5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+#     }

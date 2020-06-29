@@ -52,6 +52,11 @@ block content %}
       {{ form.seeking(class_ = 'form-control', placeholder='seeking a venue',
       autofocus = true) }}
     </div>
+    <div class="form-group">
+      <label for="seeking">Seeking Description</label>
+      {{ form.seeking_description(class_ = 'form-control', placeholder='seeking
+      description', autofocus = true) }}
+    </div>
     {{ form.submit(class_ = "btn btn-primary btn-lg btn-block") }}
   </form>
 </div>

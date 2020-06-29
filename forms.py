@@ -248,6 +248,7 @@ class ArtistForm(FlaskForm):
         'facebook_link', validators=[Optional(), URL()]
     )
     seeking = BooleanField('seeking a venue')
+    seeking_description = StringField('seeking description')
     submit = SubmitField('Create Artist')
 
 # TODO IMPLEMENT NEW ARTIST FORM AND NEW SHOW FORM

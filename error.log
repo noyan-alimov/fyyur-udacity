@@ -1639,3 +1639,99 @@ Traceback (most recent call last):
     raise TypeError('Parser must be a string or character stream, not '
 TypeError: Parser must be a string or character stream, not datetime
 2020-06-29 22:09:43,335 INFO: errors [in app.py:612]
+2020-06-29 22:14:36,534 INFO: errors [in app.py:592]
+2020-06-29 22:16:09,948 ERROR: Exception on /venues/create [POST] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\forms.py", line 97, in validate_phone
+    raise ValidationError('Invalid phone number.')
+wtforms.validators.ValidationError: Invalid phone number.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 246, in create_venue_form
+    if form.validate_on_submit():
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask_wtf\form.py", line 100, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\wtforms\form.py", line 318, in validate
+    return super(Form, self).validate(extra)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\wtforms\form.py", line 150, in validate
+    if not field.validate(self, extra):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\wtforms\fields\core.py", line 226, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\wtforms\fields\core.py", line 246, in _run_validation_chain
+    validator(form, self)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\forms.py", line 99, in validate_phone
+    input_number = phonenumbers.parse("+1"+field.data)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\phonenumbers\phonenumberutil.py", line 2799, in parse
+    raise NumberParseException(NumberParseException.NOT_A_NUMBER,
+phonenumbers.phonenumberutil.NumberParseException: (1) The string supplied did not seem to be a phone number.
+2020-06-29 22:19:53,237 INFO: errors [in app.py:589]
+2020-06-29 22:20:42,264 INFO: errors [in app.py:589]
+2020-06-29 22:27:53,421 INFO: errors [in app.py:593]
+2020-06-29 22:28:07,879 ERROR: Exception on /venues/8/delete [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2020-06-29 22:28:50,754 INFO: errors [in app.py:593]
+2020-06-29 22:32:14,444 INFO: errors [in app.py:573]
+2020-06-29 22:35:15,668 INFO: errors [in app.py:573]
+2020-06-29 22:36:17,459 INFO: errors [in app.py:573]
+2020-06-29 22:36:34,075 INFO: errors [in app.py:573]
+2020-06-29 22:36:37,790 ERROR: Exception on /artists/5/edit [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 411, in edit_artist
+    return render_template('forms/edit_artist.html', form=form, artist=artist)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\forms\edit_artist.html", line 9, in template
+    {{ form.name(class_ = 'form-control', placeholder={{ artist.name }},
+jinja2.exceptions.TemplateSyntaxError: expected token ':', got '}'
+2020-06-29 22:39:50,501 INFO: errors [in app.py:573]
+2020-06-29 22:46:25,837 INFO: errors [in app.py:573]
+2020-06-29 23:01:07,951 INFO: errors [in app.py:596]

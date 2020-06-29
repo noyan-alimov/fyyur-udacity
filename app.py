@@ -140,28 +140,6 @@ def venues():
                 }]
             }
             data.append(obj)
-
-    # data = [{
-    #     "city": "San Francisco",
-    #     "state": "CA",
-    #     "venues": [{
-    #         "id": 1,
-    #         "name": "The Musical Hop",
-    #         "num_upcoming_shows": 0,
-    #     }, {
-    #         "id": 3,
-    #         "name": "Park Square Live Music & Coffee",
-    #         "num_upcoming_shows": 1,
-    #     }]
-    # }, {
-    #     "city": "New York",
-    #     "state": "NY",
-    #     "venues": [{
-    #         "id": 2,
-    #         "name": "The Dueling Pianos Bar",
-    #         "num_upcoming_shows": 0,
-    #     }]
-    # }]
     return render_template('pages/venues.html', areas=data)
 
 
@@ -276,37 +254,40 @@ def create_venue_form():
         except:
             db.session.rollback()
             print('Error adding a new Venue to a database')
-            flash('Error creating a new Venue')
+            flash('An error occurred. Venue ' +
+                  venue.name + ' could not be listed.')
             error = True
         finally:
             db.session.close()
         if not error:
-            flash('Thank you for creating a Venue!')
+            flash('Venue ' + request.form['name'] +
+                  ' was successfully listed!')
 
     return render_template('forms/new_venue.html', form=form)
 
 
-# @app.route('/venues/create', methods=['POST'])
-# def create_venue_submission():
-#     # TODO: insert form data as a new Venue record in the db, instead
-#     # TODO: modify data to be the data object returned from db insertion
-
-#     # on successful db insert, flash success
-#     flash('Venue ' + request.form['name'] + ' was successfully listed!')
-#     # TODO: on unsuccessful db insert, flash an error instead.
-#     # e.g., flash('An error occurred. Venue ' + data.name + ' could not be listed.')
-#     # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/
-#     return render_template('pages/home.html')
-
-
-@app.route('/venues/<venue_id>', methods=['DELETE'])
+@app.route('/venues/<int:venue_id>/delete', methods=['GET', 'POST'])
 def delete_venue(venue_id):
     # TODO: Complete this endpoint for taking a venue_id, and using
     # SQLAlchemy ORM to delete a record. Handle cases where the session commit could fail.
+    venue = Venue.query.get(venue_id)
+    error = False
+    try:
+        db.session.delete(venue)
+        db.session.commit()
+    except:
+        db.session.rollback()
+        flash('Error deleting a venue')
+        print('Error deleting a venue')
+        error = True
+    finally:
+        db.session.close()
+    if not error:
+        flash('Venue has been deleted')
+        return redirect(url_for('index'))
 
     # BONUS CHALLENGE: Implement a button to delete a Venue on a Venue Page, have it so that
     # clicking that button delete it from the db then redirect the user to the homepage
-    return None
 
 #  Artists
 #  ----------------------------------------------------------------
@@ -321,16 +302,7 @@ def artists():
             'name': artist.name
         }
         data.append(obj)
-    # data = [{
-    #     "id": 4,
-    #     "name": "Guns N Petals",
-    # }, {
-    #     "id": 5,
-    #     "name": "Matt Quevedo",
-    # }, {
-    #     "id": 6,
-    #     "name": "The Wild Sax Band",
-    # }]
+
     return render_template('pages/artists.html', artists=data)
 
 
@@ -430,35 +402,39 @@ def show_artist(artist_id):
     #  ----------------------------------------------------------------
 
 
-@app.route('/artists/<int:artist_id>/edit', methods=['GET'])
+@app.route('/artists/<int:artist_id>/edit', methods=['GET', 'POST'])
 def edit_artist(artist_id):
     form = ArtistForm()
-    artist = {
-        "id": 4,
-        "name": "Guns N Petals",
-        "genres": ["Rock n Roll"],
-        "city": "San Francisco",
-        "state": "CA",
-        "phone": "326-123-5000",
-        "website": "https://www.gunsnpetalsband.com",
-        "facebook_link": "https://www.facebook.com/GunsNPetals",
-        "seeking_venue": True,
-        "seeking_description": "Looking for shows to perform at in the San Francisco Bay Area!",
-        "image_link": "https://images.unsplash.com/photo-1549213783-8284d0336c4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
-    }
+    artist = Artist.query.get(artist_id)
+    if form.validate_on_submit():
+        artist.name = form.name.data
+        artist.city = form.city.data
+        artist.state = form.state.data
+        artist.phone = form.phone.data
+        artist.genres = form.genres.data
+        artist.website_link = form.website_link.data
+        artist.facebook_link = form.facebook_link.data
+        artist.image_link = form.image_link.data
+        artist.seeking = form.seeking.data
+        artist.seeking_description = form.seeking_description.data
+
+    elif request.method == 'GET':
+        form.name.data = artist.name
+        form.city.data = artist.city
+        form.state.data = artist.state
+        form.phone.data = artist.phone
+        form.genres.data = artist.genres
+        form.website_link.data = artist.website_link
+        form.facebook_link.data = artist.facebook_link
+        form.image_link.data = artist.image_link
+        form.seeking.data = artist.seeking
+        form.seeking_description.data = artist.seeking_description
+
     # TODO: populate form with fields from artist with ID <artist_id>
     return render_template('forms/edit_artist.html', form=form, artist=artist)
 
 
-@app.route('/artists/<int:artist_id>/edit', methods=['POST'])
-def edit_artist_submission(artist_id):
-    # TODO: take values from the form submitted, and update existing
-    # artist record with ID <artist_id> using the new attributes
-
-    return redirect(url_for('show_artist', artist_id=artist_id))
-
-
-@app.route('/venues/<int:venue_id>/edit', methods=['GET'])
+@app.route('/venues/<int:venue_id>/edit', methods=['GET', 'POST'])
 def edit_venue(venue_id):
     form = VenueForm()
     venue = {
