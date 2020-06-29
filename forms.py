@@ -20,7 +20,7 @@ class ShowForm(FlaskForm):
     submit = SubmitField('Create Show')
 
 
-class VenueForm(FlaskForm):
+class VenueForm():
     name = StringField(
         'name', validators=[DataRequired()]
     )
@@ -134,10 +134,17 @@ class VenueForm(FlaskForm):
     )
     seeking = BooleanField('seeking an artist')
     seeking_description = StringField('seeking description')
+
+
+class VenueSubmit(FlaskForm, VenueForm):
     submit = SubmitField('Create Venue')
 
 
-class ArtistForm(FlaskForm):
+class VenueUpdate(FlaskForm, VenueForm):
+    submit = SubmitField('Edit Venue')
+
+
+class ArtistForm():
     name = StringField(
         'name', validators=[DataRequired()]
     )
@@ -249,6 +256,13 @@ class ArtistForm(FlaskForm):
     )
     seeking = BooleanField('seeking a venue')
     seeking_description = StringField('seeking description')
+
+
+class ArtistSubmit(FlaskForm, ArtistForm):
     submit = SubmitField('Create Artist')
+
+
+class ArtistUpdate(FlaskForm, ArtistForm):
+    submit = SubmitField('Edit Artist')
 
 # TODO IMPLEMENT NEW ARTIST FORM AND NEW SHOW FORM

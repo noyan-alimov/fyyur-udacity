@@ -1737,3 +1737,50 @@ jinja2.exceptions.TemplateSyntaxError: expected token ':', got '}'
 2020-06-29 23:01:07,951 INFO: errors [in app.py:596]
 2020-06-29 23:07:51,842 INFO: errors [in app.py:603]
 2020-06-29 23:08:19,341 INFO: errors [in app.py:596]
+2020-06-29 23:16:24,636 INFO: errors [in app.py:609]
+2020-06-29 23:16:54,477 ERROR: Exception on /venues/6/edit [POST] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 494, in edit_venue
+    return render_template('forms/edit_venue.html', form=form, venue=venue)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\forms\edit_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %} {% block title %}Edit Venue{% endblock %} {%
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\templates\forms\edit_venue.html", line 7, in block "content"
+    Edit venue <em>{{ venue.name }}</em>
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\sqlalchemy\orm\attributes.py", line 287, in __get__
+    return self.impl.get(instance_state(instance), dict_)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\sqlalchemy\orm\attributes.py", line 718, in get
+    value = state._load_expired(state, passive)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\sqlalchemy\orm\state.py", line 652, in _load_expired
+    self.manager.deferred_scalar_loader(self, toload)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\sqlalchemy\orm\loading.py", line 944, in load_scalar_attributes
+    raise orm_exc.DetachedInstanceError(
+sqlalchemy.orm.exc.DetachedInstanceError: Instance <Venue at 0x21eb8fb4130> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: http://sqlalche.me/e/bhk3)
+2020-06-29 23:17:33,297 INFO: errors [in app.py:610]
+2020-06-29 23:23:30,930 INFO: errors [in app.py:611]
+2020-06-29 23:26:23,835 INFO: errors [in app.py:611]

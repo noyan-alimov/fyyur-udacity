@@ -242,7 +242,7 @@ def show_venue(venue_id):
 
 @app.route('/venues/create', methods=['GET', 'POST'])
 def create_venue_form():
-    form = VenueForm()
+    form = VenueSubmit()
     if form.validate_on_submit():
         error = False
         try:
@@ -404,20 +404,33 @@ def show_artist(artist_id):
 
 @app.route('/artists/<int:artist_id>/edit', methods=['GET', 'POST'])
 def edit_artist(artist_id):
-    form = ArtistForm()
+    form = ArtistUpdate()
     artist = Artist.query.get(artist_id)
+    error = False
 
     if form.validate_on_submit():
-        artist.name = form.name.data
-        artist.city = form.city.data
-        artist.state = form.state.data
-        artist.phone = form.phone.data
-        artist.genres = form.genres.data
-        artist.website_link = form.website_link.data
-        artist.facebook_link = form.facebook_link.data
-        artist.image_link = form.image_link.data
-        artist.seeking = form.seeking.data
-        artist.seeking_description = form.seeking_description.data
+        try:
+            artist.name = form.name.data
+            artist.city = form.city.data
+            artist.state = form.state.data
+            artist.phone = form.phone.data
+            artist.genres = form.genres.data
+            artist.website_link = form.website_link.data
+            artist.facebook_link = form.facebook_link.data
+            artist.image_link = form.image_link.data
+            artist.seeking = form.seeking.data
+            artist.seeking_description = form.seeking_description.data
+
+            db.session.commit()
+        except:
+            db.session.rollback()
+            flash('Error editing an artist')
+            error = True
+        finally:
+            db.session.close()
+        if not error:
+            flash('Edited an artist!')
+            return redirect(url_for('index'))
 
     elif request.method == 'GET':
         form.name.data = artist.name
@@ -437,21 +450,34 @@ def edit_artist(artist_id):
 
 @app.route('/venues/<int:venue_id>/edit', methods=['GET', 'POST'])
 def edit_venue(venue_id):
-    form = VenueForm()
+    form = VenueUpdate()
     venue = Venue.query.get(venue_id)
+    error = False
 
     if form.validate_on_submit():
-        venue.name = form.name.data
-        venue.city = form.city.data
-        venue.state = form.state.data
-        venue.address = form.address.data
-        venue.phone = form.phone.data
-        venue.genres = form.genres.data
-        venue.website_link = form.website_link.data
-        venue.facebook_link = form.facebook_link.data
-        venue.image_link = form.image_link.data
-        venue.seeking = form.seeking.data
-        venue.seeking_description = form.seeking_description.data
+        try:
+            venue.name = form.name.data
+            venue.city = form.city.data
+            venue.state = form.state.data
+            venue.address = form.address.data
+            venue.phone = form.phone.data
+            venue.genres = form.genres.data
+            venue.website_link = form.website_link.data
+            venue.facebook_link = form.facebook_link.data
+            venue.image_link = form.image_link.data
+            venue.seeking = form.seeking.data
+            venue.seeking_description = form.seeking_description.data
+
+            db.session.commit()
+        except:
+            db.session.rollback()
+            flash('Error editing a venue')
+            error = True
+        finally:
+            db.session.close()
+        if not error:
+            flash('Edited a venue!')
+            return redirect(url_for('index'))
 
     elif request.method == 'GET':
         form.name.data = venue.name
@@ -475,7 +501,7 @@ def edit_venue(venue_id):
 
 @app.route('/artists/create', methods=['GET', 'POST'])
 def create_artist_form():
-    form = ArtistForm()
+    form = ArtistSubmit()
     if form.validate_on_submit():
         error = False
         try:
@@ -487,27 +513,16 @@ def create_artist_form():
         except:
             db.session.rollback()
             print('Error creating a new Artist')
-            flash('Error creating a new Artist')
+            flash('An error occurred. Artist ' +
+                  artist.name + ' could not be listed.')
             error = True
         finally:
             db.session.close()
         if not error:
-            flash('Thank you for creating a new Artist')
+            flash('Artist ' + request.form['name'] +
+                  ' was successfully listed!')
 
     return render_template('forms/new_artist.html', form=form)
-
-
-# @app.route('/artists/create', methods=['POST'])
-# def create_artist_submission():
-#     # called upon submitting the new artist listing form
-#     # TODO: insert form data as a new Venue record in the db, instead
-#     # TODO: modify data to be the data object returned from db insertion
-
-#     # on successful db insert, flash success
-#     flash('Artist ' + request.form['name'] + ' was successfully listed!')
-#     # TODO: on unsuccessful db insert, flash an error instead.
-#     # e.g., flash('An error occurred. Artist ' + data.name + ' could not be listed.')
-#     return render_template('pages/home.html')
 
 
 #  Shows
@@ -552,26 +567,22 @@ def create_shows():
     # renders form. do not touch.
     form = ShowForm()
     if form.validate_on_submit():
-        show = Show(artist_id=form.artist_id.data,
-                    venue_id=form.venue_id.data, date=form.start_time.data)
-        db.session.add(show)
-        db.session.commit()
-        flash('Thank you for creating a new Show')
-    print(form.errors)
+        error = False
+        try:
+            show = Show(artist_id=form.artist_id.data,
+                        venue_id=form.venue_id.data, date=form.start_time.data)
+            db.session.add(show)
+            db.session.commit()
+        except:
+            db.session.rollback()
+            flash('Error listing a new Show')
+            error = True
+        finally:
+            db.session.close()
+        if not error:
+            flash('Thank you for listing a new Show')
+
     return render_template('forms/new_show.html', form=form)
-
-
-# @app.route('/shows/create', methods=['POST'])
-# def create_show_submission():
-#     # called to create new shows in the db, upon submitting new show listing form
-#     # TODO: insert form data as a new Show record in the db, instead
-
-#     # on successful db insert, flash success
-#     flash('Show was successfully listed!')
-#     # TODO: on unsuccessful db insert, flash an error instead.
-#     # e.g., flash('An error occurred. Show could not be listed.')
-#     # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/
-#     return render_template('pages/home.html')
 
 
 @app.errorhandler(404)
