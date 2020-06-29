@@ -1481,3 +1481,68 @@ Traceback (most recent call last):
 TypeError: 'NoneType' object is not iterable
 2020-06-29 20:54:27,225 INFO: errors [in app.py:614]
 2020-06-29 20:56:15,847 INFO: errors [in app.py:617]
+2020-06-29 21:06:21,042 INFO: errors [in app.py:622]
+2020-06-29 21:06:36,763 ERROR: Exception on /artists/3 [GET] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 410, in show_artist
+    'address': artist.address,
+AttributeError: 'Artist' object has no attribute 'address'
+2020-06-29 21:09:12,498 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:622]
+2020-06-29 21:09:21,938 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:622]
+2020-06-29 21:09:34,441 INFO: errors [in app.py:622]
+2020-06-29 21:12:11,884 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:622]
+2020-06-29 21:14:34,676 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:622]
+2020-06-29 21:17:42,994 INFO: errors [in app.py:622]
+2020-06-29 21:20:41,547 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:622]
+2020-06-29 21:25:51,013 INFO: errors [in C:\Users\Noyan_Ali\Desktop\fyyur-udacity\app.py:622]
+2020-06-29 21:26:00,709 INFO: errors [in app.py:622]
+2020-06-29 21:27:23,097 ERROR: Exception on /artists/create [POST] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\forms.py", line 212, in validate_phone
+    raise ValidationError('Invalid phone number.')
+wtforms.validators.ValidationError: Invalid phone number.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 495, in create_artist_form
+    if form.validate_on_submit():
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask_wtf\form.py", line 100, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\wtforms\form.py", line 318, in validate
+    return super(Form, self).validate(extra)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\wtforms\form.py", line 150, in validate
+    if not field.validate(self, extra):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\wtforms\fields\core.py", line 226, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\wtforms\fields\core.py", line 246, in _run_validation_chain
+    validator(form, self)
+  File "C:\Users\Noyan_Ali\Desktop\fyyur-udacity\forms.py", line 214, in validate_phone
+    input_number = phonenumbers.parse("+1"+field.data)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\phonenumbers\phonenumberutil.py", line 2799, in parse
+    raise NumberParseException(NumberParseException.NOT_A_NUMBER,
+phonenumbers.phonenumberutil.NumberParseException: (1) The string supplied did not seem to be a phone number.
