@@ -338,7 +338,7 @@ def search_artists():
         "data": data
     }
 
-    return render_template('pages/search_artists.html', results=response, search_term=request.form.get('search_term', ''))
+    return render_template('pages/search_artists.html', results=response, search_term=search_term)
 
 
 @app.route('/artists/<int:artist_id>')
