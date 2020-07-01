@@ -1784,3 +1784,42 @@ sqlalchemy.orm.exc.DetachedInstanceError: Instance <Venue at 0x21eb8fb4130> is n
 2020-06-29 23:17:33,297 INFO: errors [in app.py:610]
 2020-06-29 23:23:30,930 INFO: errors [in app.py:611]
 2020-06-29 23:26:23,835 INFO: errors [in app.py:611]
+2020-06-29 23:34:32,335 INFO: errors [in app.py:607]
+2020-07-01 12:08:02,752 INFO: errors [in app.py:616]
+2020-07-01 12:10:31,460 INFO: errors [in app.py:634]
+2020-07-01 12:10:43,051 ERROR: Exception on /artists/search [POST] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 337, in search_artists
+    "count": len(venues),
+TypeError: object of type 'function' has no len()
+2020-07-01 12:11:08,122 ERROR: Exception on /artists/search [POST] [in C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Noyan_Ali\Anaconda3\envs\myflaskenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 337, in search_artists
+    "count": len(artists),
+TypeError: object of type 'function' has no len()
+2020-07-01 12:11:16,812 INFO: errors [in app.py:634]
+2020-07-01 12:12:06,987 INFO: errors [in app.py:626]
